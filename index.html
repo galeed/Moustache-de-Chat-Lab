@@ -13,21 +13,15 @@
       --card: #13131e;
       --card-hover: #1a1a2e;
       --border: #2a2a45;
-      --border-glow: #4f4fff55;
       --accent: #6c63ff;
       --accent2: #a78bfa;
       --accent3: #38bdf8;
-      --neon: #7c3aed;
       --text: #e0e0f0;
       --text-muted: #7070a0;
-      --text-mono: #a0a0c0;
-      --glow: 0 0 20px #6c63ff55, 0 0 40px #6c63ff22;
       --glow-hover: 0 0 30px #6c63ff88, 0 0 60px #6c63ff33;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -38,7 +32,6 @@
       position: relative;
     }
 
-    /* ── fondo animado ── */
     body::before {
       content: '';
       position: fixed;
@@ -51,7 +44,6 @@
       z-index: 0;
     }
 
-    /* cuadrícula sutil */
     body::after {
       content: '';
       position: fixed;
@@ -73,7 +65,6 @@
       padding: 0 24px 80px;
     }
 
-    /* ── header ── */
     header {
       text-align: center;
       padding: 70px 0 50px;
@@ -115,11 +106,8 @@
       margin-top: 14px;
     }
 
-    .tagline span {
-      color: var(--accent2);
-    }
+    .tagline span { color: var(--accent2); }
 
-    /* ── divider ── */
     .divider {
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--accent), transparent);
@@ -129,22 +117,12 @@
       animation: fadeIn .9s ease both .3s;
     }
 
-    /* ── grid ── */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 22px;
     }
 
-    /* última tarjeta centrada si es impar */
-    .grid .card:last-child:nth-child(odd) {
-      grid-column: 1 / -1;
-      max-width: 420px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    /* ── card ── */
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -168,7 +146,6 @@
     .card:nth-child(5) { animation-delay: .5s; }
     .card:nth-child(6) { animation-delay: .6s; }
 
-    /* línea superior brillante */
     .card::before {
       content: '';
       position: absolute;
@@ -179,7 +156,6 @@
       transition: opacity .3s ease;
     }
 
-    /* brillo de fondo al hover */
     .card::after {
       content: '';
       position: absolute;
@@ -199,7 +175,6 @@
     .card:hover::before { opacity: 1; }
     .card:hover::after  { opacity: 1; }
 
-    /* emoji botón */
     .card .emoji {
       font-size: 3.4rem;
       line-height: 1;
@@ -215,7 +190,6 @@
       filter: drop-shadow(0 0 22px #a78bfacc);
     }
 
-    /* nombre */
     .card .name {
       font-family: 'Exo 2', sans-serif;
       font-weight: 700;
@@ -229,11 +203,8 @@
       transition: color .3s ease;
     }
 
-    .card:hover .name {
-      color: var(--accent2);
-    }
+    .card:hover .name { color: var(--accent2); }
 
-    /* badge "ABRIR" */
     .badge {
       font-family: 'Share Tech Mono', monospace;
       font-size: .65rem;
@@ -253,7 +224,6 @@
       border-color: var(--accent3);
     }
 
-    /* ── footer ── */
     footer {
       text-align: center;
       padding-top: 60px;
@@ -266,7 +236,6 @@
 
     footer span { color: var(--accent2); }
 
-    /* ── animaciones ── */
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(-30px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -282,13 +251,8 @@
       to   { opacity: 1; }
     }
 
-    /* ── responsive ── */
     @media (max-width: 520px) {
       .grid { grid-template-columns: 1fr; }
-      .grid .card:last-child:nth-child(odd) {
-        grid-column: auto;
-        max-width: 100%;
-      }
       .card .emoji { font-size: 3rem; }
     }
   </style>
@@ -338,6 +302,13 @@
       <a class="card" href="https://galeed.github.io/S-Canvas-Generator-App/" target="_blank" rel="noopener">
         <span class="emoji">🖼️</span>
         <span class="name">S Canvas Generator App</span>
+        <span class="badge">↗ Abrir</span>
+      </a>
+
+      <!-- 6 Espectograma -->
+      <a class="card" href="https://galeed.github.io/Meow-Espectograma/" target="_blank" rel="noopener">
+        <span class="emoji">📊</span>
+        <span class="name">Meow Espectograma</span>
         <span class="badge">↗ Abrir</span>
       </a>
 
