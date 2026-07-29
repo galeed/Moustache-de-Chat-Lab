@@ -8,8 +8,6 @@
   <style>
     :root {
       --bg: #0a0a0f;
-      --bg2: #10101a;
-      --bg3: #15151f;
       --card: #13131e;
       --card-hover: #1a1a2e;
       --border: #2a2a45;
@@ -123,6 +121,14 @@
       gap: 22px;
     }
 
+    /* Última tarjeta centrada cuando es impar */
+    .grid .card:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      max-width: 420px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -145,6 +151,7 @@
     .card:nth-child(4) { animation-delay: .4s; }
     .card:nth-child(5) { animation-delay: .5s; }
     .card:nth-child(6) { animation-delay: .6s; }
+    .card:nth-child(7) { animation-delay: .7s; }
 
     .card::before {
       content: '';
@@ -253,6 +260,10 @@
 
     @media (max-width: 520px) {
       .grid { grid-template-columns: 1fr; }
+      .grid .card:last-child:nth-child(odd) {
+        grid-column: auto;
+        max-width: 100%;
+      }
       .card .emoji { font-size: 3rem; }
     }
   </style>
@@ -309,6 +320,13 @@
       <a class="card" href="https://galeed.github.io/Meow-Espectograma/" target="_blank" rel="noopener">
         <span class="emoji">📊</span>
         <span class="name">Meow Espectograma</span>
+        <span class="badge">↗ Abrir</span>
+      </a>
+
+      <!-- 7 Reproductor -->
+      <a class="card" href="https://galeed.github.io/Play-Cat-Media/" target="_blank" rel="noopener">
+        <span class="emoji">▶️</span>
+        <span class="name">Reproductor de Música en Línea</span>
         <span class="badge">↗ Abrir</span>
       </a>
 
